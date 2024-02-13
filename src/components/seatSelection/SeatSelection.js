@@ -1,63 +1,78 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaAngleDoubleDown } from "react-icons/fa";
-import Button from '../button/Button';
-import './seatSelection.css'
+import Button from '../button/Button';  // Importing necessary components
+import './seatSelection.css';  // Adding styles
+
 export default function SeatSelection() {
-    const [name, setName] = useState([])
-    const [arrowDown, setArrowDown] = useState(false)
-    const [gender, setGender] = useState([])
-    const [reservedSeat, setReservedSeat] = useState(["1D"])
-    const [seatNumber, setSeatnumber] = useState([])
-  
+    // Initializing state variables using useState hook
+    const [name, setName] = useState([]);  // State for passenger names
+    const [arrowDown, setArrowDown] = useState(false);  // State for submission arrow visibility
+    const [gender, setGender] = useState([]);  // State for passenger genders
+    const [reservedSeat, setReservedSeat] = useState(["1D"]);  // State for reserved seats
+    const [seatNumber, setSeatnumber] = useState([]);  // State for selected seat numbers
+
+    // Function to handle the selection of seat numbers
     const getSeatNumber = (e) => {
-        renderPassengerData(seatNumber)
-        let newSeat = e.target.value
+        renderPassengerData(seatNumber);  // Calling renderPassengerData function
+        let newSeat = e.target.value;
         if (reservedSeat.includes(newSeat)) {
-            e.disabled = true
+            e.disabled = true;
             if (seatNumber.includes(newSeat)) {
-                setSeatnumber(seatNumber.filter(seat => seat !== newSeat))
+                setSeatnumber(seatNumber.filter(seat => seat !== newSeat));
             }
         } else {
-            setSeatnumber([...seatNumber, newSeat])
-            setReservedSeat([...reservedSeat, newSeat])
-            console.log(seatNumber)
+            setSeatnumber([...seatNumber, newSeat]);
+            setReservedSeat([...reservedSeat, newSeat]);
+            console.log(seatNumber);
         }
-    }
+    };
+
+    // Function to reset all selections and inputs
     const handleReset = () => {
-        setSeatnumber([]); // Clear the selected seat numbers
-        setReservedSeat(["1D"]); // Reset the reserved seats array
-        setName([]); // Clear passenger names
-        setGender([]); // Clear passenger genders
-        setArrowDown(false); // Hide the submission confirmation arrow
+        setSeatnumber([]);  // Clear the selected seat numbers
+        setReservedSeat(["1D"]);  // Reset the reserved seats array
+        setName([]);  // Clear passenger names
+        setGender([]);  // Clear passenger genders
+        setArrowDown(false);  // Hide the submission confirmation arrow
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach((checkbox) => {
-            checkbox.checked = false; // Uncheck all checkboxes
+            checkbox.checked = false;  // Uncheck all checkboxes
         });
-    }
+    };
+
+    // Function to handle the selection of passenger genders
     const handleGender = (e, seatNo) => {
-        const { value } = e.target
-        setGender(gender.concat(value))
-        
-    }
+        const { value } = e.target;
+        setGender(gender.concat(value));
+    };
+
+    // Function to handle the entry of passenger names
     const handlePassengerName = (e, seatNo) => {
-        e.preventDefault()
-        let value = e.target.value
+        e.preventDefault();
+        let value = e.target.value;
         if (!value) {
-            return (setName("name is required"))
+            return (setName("name is required"));
         } else {
-            setName(name.concat(value))
-
+            setName(name.concat(value));
         }
-    }
-    const handleSubmitDetails = e => {
-        e.preventDefault()
-        setArrowDown(true)
-        localStorage.setItem("reservedSeats", JSON.stringify(seatNumber))
-        localStorage.setItem("nameData", JSON.stringify(name))
-        console.log(name)
-        console.log(gender)
-    }
+    };
 
+    // Function to handle the submission of passenger details
+    const handleSubmitDetails = e => {
+        e.preventDefault();
+        if (seatNumber.length === 0 || name.length === 0 || gender.length === 0) {
+            alert("Please enter valid details for all selected seats.");  // Display a pop-up if no details are entered
+        } else {
+            setArrowDown(true);
+            localStorage.setItem("reservedSeats", JSON.stringify(seatNumber));
+            localStorage.setItem("nameData", JSON.stringify(name));
+            console.log(name);
+            console.log(gender);
+            alert("Details confirmed!");  // Pop-up to confirm details
+        }
+    };
+
+    // Function to render the input fields for passenger details
     const renderPassengerData = (seatArray) => {
         return seatArray.map((seat, idx) => {
             return (
@@ -72,18 +87,17 @@ export default function SeatSelection() {
                         <input class="form-check-input" type="radio" name="gender" id="female" value="Female" onClick={e => handleGender(e, seat)} />
                         <label class="form-check-label" htmlFor="female">Female</label>
                     </div>
-                </form>)
-
-        })
-    }
+                </form>);
+        });
+    };
     return (
         <div className="ss">
             <div className="row">
                 <div className="column1">
                     <div className="plane">
                         <form onChange={e => getSeatNumber(e)}>
-                            <div className='drive_logo'>
-                                <img src="../images/drive.jpg" alt="drive" />
+                            <div className='drive_logo'>   
+                                <img src="../images/drive.jpg" alt="drive" />   
                             </div>
                             <ol className="cabin fuselage">
                                 <li className="row row--1">
@@ -104,7 +118,7 @@ export default function SeatSelection() {
                                             <input type="checkbox" disabled value="1D" id="1D" />
                                             <label htmlFor="1D">1D</label>
                                         </li>
-                                    </ol>
+                                    </ol>   
                                 </li>
                                 <li className="row row--2">
                                     <ol className="seats" type="A">
@@ -134,7 +148,7 @@ export default function SeatSelection() {
                                             <label htmlFor="3A">3A</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="3B" id="3B" />
+                                            <input type="checkbox" value="3B" id="3B" />
                                             <label htmlFor="3B">3B</label>
                                         </li>
                                         <li className="seat">
@@ -151,7 +165,7 @@ export default function SeatSelection() {
                                 <li className="row row--4">
                                     <ol className="seats" type="A">
                                         <li className="seat">
-                                            <input type="checkbox"  value="4A" id="4A" />
+                                            <input type="checkbox" value="4A" id="4A" />
                                             <label htmlFor="4A">4A</label>
                                         </li>
                                         <li className="seat">
@@ -218,11 +232,11 @@ export default function SeatSelection() {
                                             <label htmlFor="7A">7A</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="7B" id="7B" />
+                                            <input type="checkbox" value="7B" id="7B" />
                                             <label htmlFor="7B">7B</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="7C" id="7C" />
+                                            <input type="checkbox" value="7C" id="7C" />
                                             <label htmlFor="7C">7C</label>
                                         </li>
                                         <li className="seat">
@@ -239,7 +253,7 @@ export default function SeatSelection() {
                                             <label htmlFor="8A">8A</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="8B" id="8B" />
+                                            <input type="checkbox" value="8B" id="8B" />
                                             <label htmlFor="8B">8B</label>
                                         </li>
                                         <li className="seat">
@@ -260,11 +274,11 @@ export default function SeatSelection() {
                                             <label htmlFor="9A">9A</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="9B" id="9B" />
+                                            <input type="checkbox" value="9B" id="9B" />
                                             <label htmlFor="9B">9B</label>
                                         </li>
                                         <li className="seat">
-                                            <input type="checkbox"  value="9C" id="9C" />
+                                            <input type="checkbox" value="9C" id="9C" />
                                             <label htmlFor="9C">9C</label>
                                         </li>
                                         <li className="seat">
@@ -293,7 +307,7 @@ export default function SeatSelection() {
                                             <label htmlFor="10D">10D</label>
                                         </li>
                                         <div>  <button onClick={handleReset} className="btn btn-warning mt-3 reset" >Reset Selection</button>
-</div>
+                                        </div>
                                     </ol>
                                 </li>
                             </ol>

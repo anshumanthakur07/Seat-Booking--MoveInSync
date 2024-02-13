@@ -1,7 +1,7 @@
 import React from 'react'
-import './contactHeader.css'
+import './header.css'
 
-const ContactHeader = () => {
+const Header = () => {
   return (
     <div className='container'>
         <h1  className=' heading'>Select Your Seat Preference</h1>
@@ -15,4 +15,4 @@ const ContactHeader = () => {
   )
 }
 
-export default ContactHeader
+export default Header
