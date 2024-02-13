@@ -1,0 +1,22 @@
+nav{
+    display:flex;
+    padding: 5px 10px;
+    margin: auto;
+    justify-content:space-between;
+    align-items: center;
+
+}
+.container{
+    background-color: #2d8e8b;
+    /* background-color: #; */
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    gap: 24px;
+    font-weight: 500;
+}
+.logo
+{
+    /* background-color: green; */
+}
