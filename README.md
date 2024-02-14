@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# SEAT BOOKING SYSTEM USING REACT-JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This is a simple seat booking interface allows users to easily select or deselect their preferred seats.
 
-## Available Scripts
 
-In the project directory, you can run:
+## The seat booking application is composed of the following Features:
 
-### `npm start`
+### Functionality
+- User friendly seat layout interface.
+- Allocation of Seat by clicking on seat number.
+- Deallocation of seat by again clicking on the same seat.
+- Reserved seat for driver and crew member.
+- confermation dropdown for seat confermation.
+- Reset button for resetting all sected seats.
+- Contact form page.
+- Support chat button.
+- Support call button.
+- Pop-up for wrong set of input(error handling)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Video/Screenshots
+#### If the video fails to load, consider refreshing the page to potentially resolve the issue.
+https://github.com/anshumanthakur07/Seat-Booking--MoveInSync/assets/97978839/604fb5fa-428f-4df2-a2ab-3a6512859fb2
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Home Page](https://github.com/anshumanthakur07/Seat-Booking--MoveInSync/assets/97978839/9c16de9a-99ea-44ba-9b48-9271710ae3ca)
+![Contact Page](https://github.com/anshumanthakur07/Seat-Booking--MoveInSync/assets/97978839/9300310f-8170-43e2-a6f7-df2ed3a7f368)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Developed With
+- [Visual Studio Code](https://code.visualstudio.com/) - Source code editor developed by Microsoft for Windows, Linux, and macOS.
+- [Node.js](https://nodejs.org/en/) - JavaScript runtime.
+- [React](https://react.dev/) - JavaScript library for building user interfaces.
+- [Babel](https://babeljs.io/) - JavaScript transpiler.
+- [Figma](https://www.figma.com/) - for designing purpose
+- [SCSS](https://sass-lang.com/) - CSS metalanguage.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Getting Started
+Follow the instructions below to get a copy of the project running on your local machine for development and testing purposes.
+### Prerequisites
+- Node 8.x
+- Npm 3.x
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ ### Run the following commands in the terminal to verify your Node and Npm versions:
+```bash
+node -v
+npm -v
+```
+# Install
+### Follow the following steps to get development environment running.
+- Clone 'Seat-Booking--MoveInSync.git' repository from GitHub
+```bash
+ - https://github.com/anshumanthakur07/Seat-Booking--MoveInSync.git
+```
+### or
+```bash
+ - git@github.com:anshumanthakur07/Seat-Booking--MoveInSync.git
+```
+- ### insatall node modules
+```bash
+npm install
+```
+## Starting the app
+- Bulid application
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
