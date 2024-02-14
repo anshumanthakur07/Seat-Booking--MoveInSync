@@ -18,6 +18,7 @@
 - Pop-up for wrong set of input(error handling)
 
 ## Video/Screenshots
+#### If the video fails to load, consider refreshing the page to potentially resolve the issue.
 https://github.com/anshumanthakur07/Seat-Booking--MoveInSync/assets/97978839/604fb5fa-428f-4df2-a2ab-3a6512859fb2
 
 ![Home Page](https://github.com/anshumanthakur07/Seat-Booking--MoveInSync/assets/97978839/9c16de9a-99ea-44ba-9b48-9271710ae3ca)
