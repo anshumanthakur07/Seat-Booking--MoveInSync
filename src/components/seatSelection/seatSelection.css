@@ -219,10 +219,11 @@ button:hover{
 }
 
 .ss {
-    /* width: auto; */
+
     width: 100%;
     border: 1px solid #434f4a;
     background-color: #2d8e8b;
+    height: 100vh;
 }
 
 .seatInfo {

@@ -8,7 +8,7 @@ function App()
 {
   return(
     <>
-    <Navigation/>
+    <Navigation/> 
     <Header/>
     <main className="main_container">
     <SeatSelection/>
